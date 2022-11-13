@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "187697223379",
+    "project_id": "job-timer-bloc",
+    "storage_bucket": "job-timer-bloc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:187697223379:android:d11a7eaf895f2f1c842626",
+        "android_client_info": {
+          "package_name": "com.example.job_timer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "187697223379-9at1ouejd4c44f9fbgqtb64ej7745fr0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBzqXs3R497Ctz5YAK_si6Bx-uPf6zEnE8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "187697223379-9at1ouejd4c44f9fbgqtb64ej7745fr0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
