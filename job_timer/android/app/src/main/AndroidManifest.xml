@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.job_timer">
+    package="com.laerth.job_timer">
    <application
         android:label="job_timer"
         android:name="${applicationName}"

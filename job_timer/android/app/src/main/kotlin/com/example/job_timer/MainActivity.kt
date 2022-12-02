@@ -1,4 +1,4 @@
-package com.example.job_timer
+package com.laerth.job_timer
 
 import io.flutter.embedding.android.FlutterActivity
 
