@@ -10,7 +10,7 @@ class ProjectServiceImpl implements ProjectService {
   final ProjectRepository _projectRepository;
 
   ProjectServiceImpl({
-    required projectRepository,
+    required ProjectRepository projectRepository,
   }) : _projectRepository = projectRepository;
 
   @override
@@ -25,7 +25,6 @@ class ProjectServiceImpl implements ProjectService {
       ..name = projectModel.name
       ..status = projectModel.status
       ..estimate = projectModel.estimate;
-
     await _projectRepository.register(project);
   }
 }
