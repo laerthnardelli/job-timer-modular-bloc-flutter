@@ -2,9 +2,9 @@ import 'dart:developer';
 
 import 'package:isar/isar.dart';
 import 'package:job_timer/app/core/database/database.dart';
-import 'package:job_timer/app/core/entities/project.dart';
 
 import '../../core/exceptions/failure.dart';
+import '../../entities/project.dart';
 import './project_repository.dart';
 
 class ProjectRepositoryImpl implements ProjectRepository {
