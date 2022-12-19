@@ -1,6 +1,10 @@
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:job_timer/app/repositories/projects/project_repository.dart';
+import 'package:job_timer/app/repositories/projects/project_repository_impl.dart';
 import 'package:job_timer/app/services/auth/auth_service.dart';
 import 'package:job_timer/app/services/auth/auth_service_impl.dart';
+import 'package:job_timer/app/services/projects/project_service.dart';
+import 'package:job_timer/app/services/projects/project_service_impl.dart';
 
 import 'core/database/database.dart';
 import 'core/database/database_impl.dart';
@@ -14,6 +18,10 @@ class AppModule extends Module {
   List<Bind> get binds => [
         Bind.lazySingleton<AuthService>((i) => AuthServiceImpl()),
         Bind.lazySingleton<Database>((i) => DatabaseImpl()),
+        Bind.lazySingleton<ProjectRepository>(
+            (i) => ProjectRepositoryImpl(database: i())),
+        Bind.lazySingleton<ProjectService>(
+            (i) => ProjectServiceImpl(projectRepository: i())),
       ];
 
   @override
