@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:job_timer/app/entities/project_status.dart';
@@ -14,6 +16,14 @@ class HomeController extends Cubit<HomeState> {
         super(HomeState.initial());
 
   Future<void> loadProjects() async {
-    emit(state.copyWith(status: HomeStatus.loading));
+    try {
+      emit(state.copyWith(status: HomeStatus.loading));
+      final projets = await _projectService.findByStatus(state.projectFilter);
+      throw Exception();
+      emit(state.copyWith(status: HomeStatus.complete, projects: projets));
+    } catch (e, s) {
+      log('Erro ao buscar os projetos', error: e, stackTrace: s);
+      emit(state.copyWith(status: HomeStatus.failure));
+    }
   }
 }
