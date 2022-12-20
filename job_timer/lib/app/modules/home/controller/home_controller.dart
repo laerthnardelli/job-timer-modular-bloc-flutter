@@ -9,7 +9,7 @@ import 'package:job_timer/app/view_models/project_model.dart';
 part 'home_state.dart';
 
 class HomeController extends Cubit<HomeState> {
-  ProjectService _projectService;
+  final ProjectService _projectService;
 
   HomeController({required ProjectService projectService})
       : _projectService = projectService,
@@ -19,7 +19,7 @@ class HomeController extends Cubit<HomeState> {
     try {
       emit(state.copyWith(status: HomeStatus.loading));
       final projets = await _projectService.findByStatus(state.projectFilter);
-      throw Exception();
+
       emit(state.copyWith(status: HomeStatus.complete, projects: projets));
     } catch (e, s) {
       log('Erro ao buscar os projetos', error: e, stackTrace: s);
