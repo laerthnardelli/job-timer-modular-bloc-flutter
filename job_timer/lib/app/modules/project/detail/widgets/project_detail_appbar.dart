@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:job_timer/app/entities/project_status.dart';
 import 'package:job_timer/app/view_models/project_model.dart';
 
 class ProjectDetailAppbar extends SliverAppBar {
-  ProjectDetailAppbar({super.key, required ProjectModel projectModel})
+  final ProjectModel projectModel;
+
+  ProjectDetailAppbar({super.key, required this.projectModel})
       : super(
           expandedHeight: 100,
           pinned: true,
@@ -31,17 +34,23 @@ class ProjectDetailAppbar extends SliverAppBar {
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(10),
                       ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text('${projectModel.tasks.length} tasks'),
-                          Visibility(
-                            visible:
-                                projectModel.status != ProjectStatus.finished,
-                            replacement: const Text('Projeto Finalizado'),
-                            child: _NewTasks(projectModel: projectModel),
-                          ),
-                        ],
+                      child: InkWell(
+                        onTap: () {
+                          Modular.to.pushNamed('/project/task/',
+                              arguments: projectModel);
+                        },
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text('${projectModel.tasks.length} tasks'),
+                            Visibility(
+                              visible:
+                                  projectModel.status != ProjectStatus.finished,
+                              replacement: const Text('Projeto Finalizado'),
+                              child: _NewTasks(projectModel: projectModel),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
