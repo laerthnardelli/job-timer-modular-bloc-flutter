@@ -68,7 +68,12 @@ class _TaskPageState extends State<TaskPage> {
                 width: MediaQuery.of(context).size.width,
                 height: 49,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    final formValid =
+                        _formKey.currentState?.validate() ?? false;
+
+                    if (formValid) {}
+                  },
                   child: const Text('Salvar'),
                 ),
               ),
