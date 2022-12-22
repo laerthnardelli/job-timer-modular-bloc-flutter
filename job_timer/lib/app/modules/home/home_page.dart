@@ -1,11 +1,14 @@
 import 'package:asuka/asuka.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:job_timer/app/modules/home/controller/home_controller.dart';
 
 import 'package:job_timer/app/modules/home/widgets/header_projects_menu.dart';
 import 'package:job_timer/app/modules/home/widgets/project_tile.dart';
 import 'package:job_timer/app/view_models/project_model.dart';
+
+import '../../services/auth/auth_service.dart';
 
 class HomePage extends StatelessWidget {
   final HomeController controller;
@@ -22,10 +25,20 @@ class HomePage extends StatelessWidget {
         }
       },
       child: Scaffold(
-        drawer: const Drawer(
+        drawer: Drawer(
           child: SafeArea(
-            child: ListTile(
-              title: Text('Sair'),
+            child: Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: ListTile(
+                title: const Text(
+                  'Sair',
+                  style: TextStyle(color: Colors.red, fontSize: 16),
+                ),
+                onTap: () {
+                  Modular.get<AuthService>().signOut();
+                  Modular.to.navigate('/login');
+                },
+              ),
             ),
           ),
         ),
