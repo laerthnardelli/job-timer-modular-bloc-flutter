@@ -54,20 +54,31 @@ class ProjectDetailPage extends StatelessWidget {
     );
   }
 
-  Widget _buildProjectDetail(BuildContext context, ProjectModel projectModel) {
+  Widget _buildProjectDetail(
+    BuildContext context,
+    ProjectModel projectModel,
+  ) {
+    final totalTasks = projectModel.tasks.fold<int>(0, (totalValue, task) {
+      return totalValue += task.duration;
+    });
+
     return CustomScrollView(
       slivers: [
         ProjectDetailAppbar(projectModel: projectModel),
         SliverList(
           delegate: SliverChildListDelegate(
             [
-              const Padding(
-                padding: EdgeInsets.only(top: 50.0, bottom: 50),
-                child: ProjectPieChart(),
+              Padding(
+                padding: const EdgeInsets.only(top: 50.0, bottom: 50),
+                child: ProjectPieChart(
+                  projectEstimate: projectModel.estimate,
+                  totalTask: totalTasks,
+                ),
               ),
-              const ProjectTaskTile(),
-              const ProjectTaskTile(),
-              const ProjectTaskTile(),
+
+              // const ProjectTaskTile(),
+              // const ProjectTaskTile(),
+              // const ProjectTaskTile(),
             ],
           ),
         ),
