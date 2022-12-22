@@ -8,7 +8,9 @@ import '../../../view_models/project_model.dart';
 class TaskModule extends Module {
   @override
   List<Bind<Object>> get binds => [
-        BlocBind.lazySingleton((i) => TaskController()),
+        BlocBind.lazySingleton(
+          (i) => TaskController(projectService: i()),
+        ), //AppModule
       ];
 
   @override
