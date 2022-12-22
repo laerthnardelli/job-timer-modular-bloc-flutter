@@ -51,4 +51,7 @@ class ProjectServiceImpl implements ProjectService {
     final project = await _projectRepository.addTask(projectId, projectTask);
     return ProjectModel.fromEntity(project);
   }
+
+  @override
+  Future<void> finish(int projectId) => _projectRepository.finish(projectId);
 }
