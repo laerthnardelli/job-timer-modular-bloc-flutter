@@ -1,6 +1,7 @@
 import 'package:asuka/asuka.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:job_timer/app/entities/project_status.dart';
 import 'package:job_timer/app/view_models/project_model.dart';
 
 import '../../../core/ui/job_timer_icons.dart';
@@ -69,16 +70,15 @@ class ProjectDetailPage extends StatelessWidget {
           delegate: SliverChildListDelegate(
             [
               Padding(
-                padding: const EdgeInsets.only(top: 50.0, bottom: 50),
+                padding: const EdgeInsets.only(top: 50.0, bottom: 50.0),
                 child: ProjectPieChart(
                   projectEstimate: projectModel.estimate,
                   totalTask: totalTasks,
                 ),
               ),
-
-              // const ProjectTaskTile(),
-              // const ProjectTaskTile(),
-              // const ProjectTaskTile(),
+              ...projectModel.tasks
+                  .map((task) => ProjectTaskTile(task: task))
+                  .toList(),
             ],
           ),
         ),
@@ -88,10 +88,15 @@ class ProjectDetailPage extends StatelessWidget {
             alignment: Alignment.bottomRight,
             child: Padding(
               padding: const EdgeInsets.all(15.0),
-              child: ElevatedButton.icon(
-                  onPressed: () {},
-                  icon: const Icon(JobTimerIcons.ok_circled2),
-                  label: const Text('Finalizar Projeto')),
+              child: Visibility(
+                visible: projectModel.status != ProjectStatus.finished,
+                child: ElevatedButton.icon(
+                    onPressed: () {
+                      controller.finishProject();
+                    },
+                    icon: const Icon(JobTimerIcons.ok_circled2),
+                    label: const Text('Finalizar Projeto')),
+              ),
             ),
           ),
         )
