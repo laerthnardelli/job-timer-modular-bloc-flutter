@@ -15,22 +15,22 @@ Tecnologias Utilizadas: <br/>
 
 * Flutter
 * Firebase Auth / Google SignIn
-* Bloc / Cubit (gerenciamento de estado)
+* Bloc / Cubit (gerência de estado)
 * Modular (injeção de dependência / rotas)
 * Equatable (comparar objetos)
 * fl_chart (gráficos)
-* Isar (Database Local)
-* validatorless (validação de formulário)
+* Isar (database local)
+* Validatorless (validação de formulário)
 * Asuka (snackbar para notificação para usuário em caso de sucesso ou erro).
 
 Imagens App:
 
-![app-job-01](https://user-images.githubusercontent.com/54412289/210243810-90e83716-424c-4729-9738-e21101d0854e.jpeg)
-![app-job-02](https://user-images.githubusercontent.com/54412289/210243816-a4b7890c-7f62-43df-9879-9aeb796af87a.jpeg)
-![app-job-03](https://user-images.githubusercontent.com/54412289/210243830-63f64458-efe5-41bf-8acb-f60af33d9149.jpeg)
-![app-job-04](https://user-images.githubusercontent.com/54412289/210243832-1335f9d9-1ba3-4599-b934-7ad9b9bf7a75.jpeg)
-![app-job-05](https://user-images.githubusercontent.com/54412289/210243833-37461bd7-5739-42f9-a8fa-ecffec2609b3.jpeg)
-![app-job-06](https://user-images.githubusercontent.com/54412289/210243834-09fcf7a5-db42-4a95-b61b-83b1b2bb63ea.jpeg)
-![app-job-07](https://user-images.githubusercontent.com/54412289/210243848-024f2940-48d0-4847-8aaa-9701b967294f.jpeg)
-![app-job-08](https://user-images.githubusercontent.com/54412289/210243858-c82e4e81-4798-4672-bdca-dacdc27a8257.jpeg)
+![app-job-01](https://user-images.githubusercontent.com/54412289/210245836-4e60e8cd-d3c6-4d7d-8d68-86be88cb60c5.jpg)
+![app-job-02](https://user-images.githubusercontent.com/54412289/210245837-f9e133ee-5e5c-41bc-b6f4-210fb4ae9a91.jpg)
+![app-job-03](https://user-images.githubusercontent.com/54412289/210245838-404575cc-3bb8-4521-a01d-de0f9d49f524.jpg)
+![app-job-04](https://user-images.githubusercontent.com/54412289/210245842-adaa5d97-f6c0-4aab-83fc-4cb351ec09c8.jpg)
+![app-job-05](https://user-images.githubusercontent.com/54412289/210245844-f1fba786-d1d3-4f42-b840-9b987f7fd1e5.jpg)
+![app-job-06](https://user-images.githubusercontent.com/54412289/210245845-7960199f-a1d0-48a5-9d69-2a9f66abbc03.jpg)
+![app-job-07](https://user-images.githubusercontent.com/54412289/210245846-b0b32d83-4425-45c0-8ea8-5a14e4560031.jpg)
+![app-job-08](https://user-images.githubusercontent.com/54412289/210245860-55d53bd0-74a5-4271-bf5d-d237871e6143.jpg)
 
